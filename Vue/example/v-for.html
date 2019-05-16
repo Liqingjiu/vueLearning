@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="../assets/js/vue.js"></script>
+    <title>v-for 实例</title>
+</head>
+
+<body>
+    <h1>v-for 实例</h1>
+    <hr>
+    <div id="app">
+        <h2>输出 items</h2>
+        <hr>
+        <ul>
+            <li v-for="item in items">{{items}}</li>
+        </ul>
+        <h2>输出 item</h2>
+        <hr>
+        <ul>
+            <li v-for="item in items1">{{item}}</li>
+        </ul>
+        <h2>输出 排序之后的items</h2>
+        <hr>
+        <ul>
+            <li v-for="item in sortItems">{{item}}</li>
+        </ul>
+        <hr>
+        <ul>
+            <li v-for="(student,index) in students">
+                {{index+1}}:{{student.name}}-{{student.age}}
+            </li>
+        </ul>
+        <ul>
+            <li v-for="(student,index) in students">
+                {{index+1}}:{{student}}
+            </li>
+        </ul>
+        <ul>
+            <li>
+                {{students}}
+            </li>
+        </ul>
+        <ul>
+            <li v-for="student in sortStudents">
+                {{student.name}}-{{student.age}}
+            </li>
+        </ul>
+    </div>
+    <hr>
+    <footer>
+        <h1><a href="../index.html">Back</a></h1>
+    </footer>
+
+    <script type="text/javascript">
+        var app = new Vue({
+            el: '#app',
+            data: {
+                items: [1, 2, 3, 6, 5, 4, 9, 8, 7, 0],
+                items1: [1, 2, 3, 6, 5, 4, 9, 8, 7, 0],
+                items2: [1, 2, 3, 6, 5, 4, 9, 8, 7, 0],
+                students: [{
+                    name: 'lqj',
+                    age: 23,
+                }, {
+                    name: 'Kuck',
+                    age: 2,
+                }, {
+                    name: 'Jeson',
+                    age: 32,
+                }, {
+                    name: 'Qingjiu',
+                    age: 18,
+                }, ]
+            },
+            computed: {
+                sortItems: function() {
+                    return this.items2.sort(sortNumber);
+                },
+                sortStudents: function() {
+                    return sortByKey(this.students, 'age');
+                },
+            },
+        });
+        // javascript的一个缺陷，sort排序时只会按照数字第一位的大小进行排序，需要内部函数辅助排序
+        function sortNumber(a, b) {
+            return a - b;
+        };
+        // 数组排序方法,一个原生的排序方法
+        function sortByKey(arry, key) {
+            return arry.sort(function(a, b) {
+                var x = a[key];
+                var y = b[key];
+                return ((x < y) ? -1 : ((x > y) ? 1 : 0));
+            })
+        }
+    </script>
+</body>
+
+</html>

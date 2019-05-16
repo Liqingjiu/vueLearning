@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="../assets/js/vue.js"></script>
+    <title>v-if 实例</title>
+</head>
+
+<body>
+    <h1>v-if 实例</h1>
+    <hr>
+    <ol>
+        <li id="abb">你好小姐姐</li>
+        <li>
+            <div id="app">
+                <div v-if="isLogin">{{massage}}</div>
+                <div v-else="isLogin">{{massage1}}</div>
+                <div v-show="isLogin">{{massage2}}</div>
+            </div>
+        </li>
+    </ol>
+
+    <hr>
+    <footer>
+        <h1><a href="../index.html">Back</a></h1>
+    </footer>
+
+    <script type="text/javascript">
+        var app = new Vue({
+            el: '#app',
+            data: {
+                massage: 'Hello hurman!!',
+                massage1: '你还没有登陆',
+                massage2: '你看不见我',
+                isLogin: false,
+            }
+        })
+    </script>
+</body>
+
+</html>

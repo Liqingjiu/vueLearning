@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <script type="text/javascript" src="../assets/js/vue.js"></script>
+    <!-- <script type="text/javascript" src="../assets/js/helloWorld.js"></script> -->
+
+    <title>Vue实例 1</title>
+</head>
+
+<body>
+    <h1>Vue实例 1</h1>
+    <hr>
+    <ol>
+        <li>
+            <div id="app">
+                {{massage}}
+            </div>
+        </li>
+    </ol>
+    <hr>
+    <footer>
+        <h1><a href="../index.html">返回</a></h1>
+    </footer>
+
+    <script type="text/javascript">
+        var app = new Vue({
+            el: '#app',
+            data: {
+                massage: 'Hello World!!!'
+            }
+        })
+    </script>
+</body>
+
+</html>

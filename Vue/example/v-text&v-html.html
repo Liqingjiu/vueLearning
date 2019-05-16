@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <script type="text/javascript" src="../assets/js/vue.js"></script>
+    <!-- <script type="text/javascript" src="../assets/js/helloWorld.js"></script> -->
+
+    <title>v-text&v-html实例 1</title>
+</head>
+
+<body>
+    <h1>v-text&v-html实例 1</h1>
+    <hr>
+    <ol>
+        <li>
+            <div id="app">
+                <!-- 正常使用{{...}}来获取信息，优势会因为网络延迟或者javascript失效而产生不友好的显示 -->
+                <span>{{massage}}</span>=<span v-text="massage"></span>
+                <!-- v-html 可以使写在vue中的字段编译，但是项目中尽量不要用，容易被攻击 -->
+                <span v-html="dodo"></span>
+            </div>
+        </li>
+    </ol>
+    <hr>
+    <footer>
+        <h1><a href="../index.html">返回</a></h1>
+    </footer>
+
+    <script type="text/javascript">
+        var app = new Vue({
+            el: '#app',
+            data: {
+                massage: 'Hello World!!!',
+                dodo: '<h2>Hello World!!!</h2>',
+            }
+        })
+    </script>
+</body>
+
+</html>

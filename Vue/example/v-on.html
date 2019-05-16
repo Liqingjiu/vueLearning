@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <script type="text/javascript" src="../assets/js/vue.js"></script>
+    <!-- <script type="text/javascript" src="../assets/js/helloWorld.js"></script> -->
+
+    <title>v-on 1</title>
+</head>
+
+<body>
+    <h1>v-on 实例 1</h1>
+    <hr>
+    <div id="app">
+        <p>
+            <button v-on:click="add">加分</button>
+            <button @click="minus">减分</button> <br>
+            <input type="text" v-on:keyup.enter="plus" v-modle="score2"><br>
+            <v-text>本场得分{{score}}</v-text>
+        </p>
+    </div>
+    <hr>
+    <footer>
+        <h1><a href="../index.html">返回</a></h1>
+    </footer>
+
+    <script type="text/javascript">
+        var app = new Vue({
+            el: '#app',
+            data: {
+                score: 0,
+                score2: 1,
+            },
+            methods: {
+                add: function() {
+                    this.score += this.score2;
+                },
+                minus: function() {
+                    if (this.score > 0) {
+                        this.score -= score2;
+                    }
+                    if (this.score < 0) {
+                        this.score = 0;
+                    }
+                },
+                plus: function() {
+
+                }
+            },
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,22 @@
+{
+  "name": "vue",
+  "version": "1.0.0",
+  "description": "vuelearning",
+  "main": "index.js",
+  "directories": {
+    "example": "example"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "kuck",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Liqingjiu/vueLearning.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Liqingjiu/vueLearning/issues"
+  },
+  "homepage": "https://github.com/Liqingjiu/vueLearning#readme"
+}
