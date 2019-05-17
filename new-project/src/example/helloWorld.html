@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Vue 实例 1</title>
+</head>
+
+<body>
+    <h1>Vue 实例 1</h1>
+    <hr>
+    <ul id="app">
+        <li>{{massage}}</li>
+    </ul>
+    <hr>
+    <footer><a href="../../index.html">返回</a></footer>
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+                massage: 'Hello world!!'
+            },
+        })
+    </script>
+</body>
+
+</html>
