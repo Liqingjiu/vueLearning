@@ -19,8 +19,10 @@
         <p>
             <button v-on:click="add">加分</button>
             <button @click="minus">减分</button> <br>
-            <input type="text" v-on:keyup.enter="plus" v-modle="score2"><br>
-            <v-text>本场得分{{score}}</v-text>
+            <span>{{score2}}</span>
+            <input type="text" v-model="score2"><br>
+            <span v-text="score"></span><br>
+            <span>{{score2}}</span>
         </p>
     </div>
     <hr>
@@ -34,14 +36,15 @@
             data: {
                 score: 0,
                 score2: 1,
+                model: 1,
             },
             methods: {
                 add: function() {
-                    this.score += this.score2;
+                    this.score = this.score + parseInt(this.score2);
                 },
                 minus: function() {
                     if (this.score > 0) {
-                        this.score -= score2;
+                        this.score -= parseInt(this.score2);
                     }
                     if (this.score < 0) {
                         this.score = 0;
