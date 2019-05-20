@@ -18,6 +18,7 @@
     <div id="app">
         <img v-bind:src="imgSrc"><br>
         <a :href="webUrl">Bilibili东花</a>
+
         <hr>
         <h3>与v-model组合，radio</h3>
         <input type="radio" id="classA" value="classA" v-model="className">
@@ -29,15 +30,24 @@
         <div :class="className">
             <span :class="className">可以变色</span>
         </div>
+
         <hr>
         <h3>如v-model组合，checkbox</h3>
-        <input type="checkbox" id="classA" value="classA" v-model="className">
+        <input type="checkbox" id="classA" value="classA" v-model="classNames">
         <label for="classA">red</label>
-        <input type="checkbox" id="classB" value="classB" v-model="className">
+        <input type="checkbox" id="classB" value="classB" v-model="classNames">
         <label for="classA">green</label>
-        <input type="checkbox" id="classB" value="classC" v-model="className">
+        <input type="checkbox" id="classB" value="classC" v-model="classNames">
         <label for="classA">blue</label>
+        <div :class="classNames">
+            <p>也可以变色</p>
+        </div>
 
+        <hr>
+        <h3>绑定style</h3>
+        <div :style="myStyle">SSS</div>
+        <div :style="styleObj">SSSS</div>
+        <div :style="{color:red,fontSize:fontSize}">SSSSS</div>
     </div>
     <hr>
     <style>
@@ -46,13 +56,13 @@
         }
         
         .classB {
-            font-size: 100px;
+            font-size: 50px;
         }
         
         .classC {
             display: block;
-            color: blue;
-            background-color: red;
+            background-color: blue;
+            width: 300;
         }
     </style>
     <footer>
@@ -68,6 +78,13 @@
                 webUrl: "https://www.bilibili.com/",
                 className: "classA",
                 classNames: [],
+                myStyle: "font-size:50px;color:red;",
+                styleObj: {
+                    color: 'green',
+                    fontSize: '100px',
+                },
+                red: 'blue',
+                fontSize: '75px'
             }
         })
     </script>

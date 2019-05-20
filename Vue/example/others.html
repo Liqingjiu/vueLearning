@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <script type="text/javascript" src="../assets/js/vue.js"></script>
+    <!-- <script type="text/javascript" src="../assets/js/helloWorld.js"></script> -->
+
+    <title>v-pre & v-cload & v-once</title>
+</head>
+
+<body>
+    <h1>v-pre & v-cload & v-once</h1>
+    <hr>
+    <div id="app">
+        <div>{{massage}}</div>
+        <p>使用v-pre</p>
+        <div v-pre>{{massage}}</div>
+        <p>v-clock：在渲染完成后再显示</p>
+        <div v-clock>{{massage}}</div>
+        <div><input type="text" v-model="massage"></div>
+        <p>带有v-once指令的标签值只渲染一次，不随双向绑定改变值</p>
+        <div v-once>{{massage}}</div>
+    </div>
+    <hr>
+    <footer>
+        <h1><a href="../index.html">返回</a></h1>
+    </footer>
+
+    <script type="text/javascript">
+        var app = new Vue({
+            el: '#app',
+            data: {
+                massage: 'Hello World!!!'
+            }
+        })
+    </script>
+
+    <style>
+        p {
+            color: red;
+        }
+    </style>
+</body>
+
+</html>
