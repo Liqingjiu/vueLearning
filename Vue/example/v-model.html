@@ -36,14 +36,23 @@
                 <input type="checkbox" id="isTrue" v-model="isTrue">
                 <label for="isTrue">{{isTrue}}</label>
                 <hr>
-                <h3>多选绑定多个值</h3>
+                <h3>多选绑定数组</h3>
                 <input type="checkbox" id="M1" value="M1" v-model="checkMsg">
-                <label for="isTrue">m1</label>
-                <input type="checkbox" id="M2" value="M2" v-model="ckeckMsg">
-                <label for="isTrue">m2</label>
-                <input type="checkbox" id="M3" value="M3" v-model="ckeckMsg">
-                <label for="isTrue">m3</label><br>
+                <label for="M1">m1</label>
+                <input type="checkbox" id="M2" value="M2" v-model="checkMsg">
+                <label for="M2">m2</label>
+                <input type="checkbox" id="M3" value="M3" v-model="checkMsg">
+                <label for="M3">m3</label><br>
                 <span>{{checkMsg}}</span>
+                <hr>
+                <h3>单选框绑定</h3><br>
+                <span>
+                    <input type="radio" id="one" value="男" v-model="sex">
+                    <label for="one">男</label>
+                    <input type="radio" id="two" value="女" v-model="sex">
+                    <label for="one">nv</label><br>
+                    <p>性别：{{sex}}</p>
+                </span>
             </div>
         </li>
     </ol>
@@ -59,6 +68,7 @@
                 massage: 'Hello World!!!',
                 isTrue: true,
                 checkMsg: [],
+                sex: "男",
             }
         })
     </script>
