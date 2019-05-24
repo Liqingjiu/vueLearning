@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <script type="text/javascript" src="../assets/js/vue.js"></script>
+    <!-- <script type="text/javascript" src="../assets/js/helloWorld.js"></script> -->
+
+    <title>v-model</title>
+</head>
+
+<body>
+    <h1>v-model</h1>
+    <hr>
+    <ol>
+        <li>
+            <div id="app">
+                <h3>原始数据</h3>
+                <span>{{massage}}</span>
+                <h3>正常文本框</h3>
+                <input type="text" v-model="massage"><br>
+                <h3>懒加载文本框</h3>
+                <input type="text" v-model.lazy="massage">
+                <h3>只能是数字文本框</h3>
+                <input type="text" v-model.number="massage">
+                <h3>去空格文本框</h3>
+                <input type="text" v-model.trim="massage">
+                <hr>
+                <h3>文本域</h3>
+                <textarea name="" id="" cols="30" rows="10" v-model="massage"></textarea>
+                <hr>
+                <h3>多选框绑定一个值</h3>
+                <input type="checkbox" id="isTrue" v-model="isTrue">
+                <label for="isTrue">{{isTrue}}</label>
+                <hr>
+                <h3>多选绑定数组</h3>
+                <input type="checkbox" id="M1" value="M1" v-model="checkMsg">
+                <label for="M1">m1</label>
+                <input type="checkbox" id="M2" value="M2" v-model="checkMsg">
+                <label for="M2">m2</label>
+                <input type="checkbox" id="M3" value="M3" v-model="checkMsg">
+                <label for="M3">m3</label><br>
+                <span>{{checkMsg}}</span>
+                <hr>
+                <h3>单选框绑定</h3><br>
+                <span>
+                    <input type="radio" id="one" value="男" v-model="sex">
+                    <label for="one">男</label>
+                    <input type="radio" id="two" value="女" v-model="sex">
+                    <label for="one">nv</label><br>
+                    <p>性别：{{sex}}</p>
+                </span>
+            </div>
+        </li>
+    </ol>
+    <hr>
+    <footer>
+        <h1><a href="../index.html">返回</a></h1>
+    </footer>
+
+    <script type="text/javascript">
+        var app = new Vue({
+            el: '#app',
+            data: {
+                massage: 'Hello World!!!',
+                isTrue: true,
+                checkMsg: [],
+                sex: "男",
+            }
+        })
+    </script>
+</body>
+
+</html>

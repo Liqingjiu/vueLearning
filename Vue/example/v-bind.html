@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <script type="text/javascript" src="../assets/js/vue.js"></script>
+    <!-- <script type="text/javascript" src="../assets/js/helloWorld.js"></script> -->
+
+    <title>v-bind</title>
+</head>
+
+<body>
+    <h1>v-bind</h1>
+    <hr>
+    <div id="app">
+        <img v-bind:src="imgSrc"><br>
+        <a :href="webUrl">Bilibili东花</a>
+
+        <hr>
+        <h3>与v-model组合，radio</h3>
+        <input type="radio" id="classA" value="classA" v-model="className">
+        <label for="classA">red</label>
+        <input type="radio" id="classB" value="classB" v-model="className">
+        <label for="classA">green</label>
+        <input type="radio" id="classB" value="classC" v-model="className">
+        <label for="classA">blue</label>
+        <div :class="className">
+            <span :class="className">可以变色</span>
+        </div>
+
+        <hr>
+        <h3>如v-model组合，checkbox</h3>
+        <input type="checkbox" id="classA" value="classA" v-model="classNames">
+        <label for="classA">red</label>
+        <input type="checkbox" id="classB" value="classB" v-model="classNames">
+        <label for="classA">green</label>
+        <input type="checkbox" id="classB" value="classC" v-model="classNames">
+        <label for="classA">blue</label>
+        <div :class="classNames">
+            <p>也可以变色</p>
+        </div>
+
+        <hr>
+        <h3>绑定style</h3>
+        <div :style="myStyle">SSS</div>
+        <div :style="styleObj">SSSS</div>
+        <div :style="{color:red,fontSize:fontSize}">SSSSS</div>
+    </div>
+    <hr>
+    <style>
+        .classA {
+            color: red;
+        }
+        
+        .classB {
+            font-size: 50px;
+        }
+        
+        .classC {
+            display: block;
+            background-color: blue;
+            width: 300;
+        }
+    </style>
+    <footer>
+        <h1><a href="../index.html">返回</a></h1>
+    </footer>
+
+    <script type="text/javascript">
+        var app = new Vue({
+            el: '#app',
+            data: {
+                massage: 'Hello World!!!',
+                imgSrc: "https://i2.hdslb.com/bfs/face/6a3dc64c682aafd23dc9ac012c00206a6b1fbf82.jpg@72w_72h.jpg",
+                webUrl: "https://www.bilibili.com/",
+                className: "classA",
+                classNames: [],
+                myStyle: "font-size:50px;color:red;",
+                styleObj: {
+                    color: 'green',
+                    fontSize: '100px',
+                },
+                red: 'blue',
+                fontSize: '75px'
+            }
+        })
+    </script>
+</body>
+
+</html>
